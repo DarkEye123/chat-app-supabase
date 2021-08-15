@@ -1,9 +1,8 @@
-import React from 'react';
+import React from "react";
 
 const Auth = ({ supabase }) => {
-  const onLogIn = async () => {
-    const {} = await supabase.auth.signIn({ provider: 'github' });
-    console.log(e);
+  const onLogIn = () => {
+    supabase.auth.signIn({ provider: "github" });
   };
 
   return (
