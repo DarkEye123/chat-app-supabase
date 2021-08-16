@@ -8,7 +8,7 @@ import {
   checkUserFromSession,
   checkPublicUser,
   syncPublicUserWithSessionUser,
-} from "../utils/client";
+} from "../utils/client/user";
 
 export default function Home({ session, supabase }) {
   const [isLoggedIn, setIsLoggedIn] = useState(!!session);
