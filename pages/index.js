@@ -4,6 +4,8 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 
 import Auth from "../components/Auth";
+import MessageList from "../components/MessageList";
+
 import {
   checkUserFromSession,
   checkPublicUser,
@@ -38,7 +40,10 @@ export default function Home({ session, supabase }) {
 
       <main className={styles.main}>
         {isLoggedIn ? (
-          <span>Hooray You are In!</span>
+          <div>
+            <span>Hooray You are In!</span>
+            <MessageList supabase={supabase} session={session} />
+          </div>
         ) : (
           <Auth supabase={supabase}></Auth>
         )}
